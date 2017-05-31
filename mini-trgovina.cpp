@@ -14,6 +14,8 @@ int main()
     ofstream datotekaUpisivanje;
     ifstream datotekaUcitavanje;
 
+
+
     while(1)
     {
         cout << "Glavni izbornik" << endl;
@@ -44,6 +46,9 @@ int main()
             datotekaUpisivanje.close();
 
             brojArtikla++;
+
+
+
         }
         else if( izbor == 2 )
         {
@@ -101,6 +106,31 @@ int main()
         }
         else if( izbor == 5 )
         {
+            cout <<"Unesite bar kod koji zelite promjeniti:";
+            cin>> unos;
+            int novacijena;
+            bool pronaden=false;
+            for( int i = 0; i < brojArtikla; i++ )
+            {
+                if(unos ==barkod[i])
+                {
+                    cout << artikli[i] << "\t";
+                    cout << "Cijena:"<<cijena[i]<<"\t";
+                    cout <<"Bar kod:"<<barkod[i]<<endl;
+                    pronaden= true;
+                    if(pronaden=true)
+                    {
+                        cout<<"Unesite novo cijenu artikla:";
+                        cin >>  novacijena;
+                        cijena[i]=novacijena;
+                    }
+                    break;
+                }
+                if(pronaden=false)
+                {
+                    cout <<"Artikl nije pronaden.";
+                }
+            }
         }
         else if( izbor == 6 )
         {
