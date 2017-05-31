@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    unsigned long long int unos;
     int brojArtikla = 0;
     int izbor;
     int MAX = 50;
@@ -48,6 +49,21 @@ int main()
         }
         else if( izbor == 3 )
         {
+            cout <<"Unesite bar kod koji zelite pretraziti:";
+            cin>> unos;
+            for( int i = 0; i < brojArtikla; i++ )
+            {
+                if(unos ==barkod[i])
+                {
+                    cout << artikli[i] << "\t";
+                    cout << "Cijena:"<<cijena[i]<<"\t";
+                    cout <<"Bar kod:"<<barkod[i]<<endl;
+                }
+                else
+                {
+                    cout <<"Artikl nije pronaden.";
+                }
+            }
         }
         else if( izbor == 4 )
         {
