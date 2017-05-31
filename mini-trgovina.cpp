@@ -15,7 +15,18 @@ int main()
     ifstream datotekaUcitavanje;
 
 
-
+    datotekaUcitavanje.open("artikli.txt");
+    while(1)
+    {
+        datotekaUcitavanje>>barkod[brojArtikla];
+        if(datotekaUcitavanje.eof()==true)
+            break;
+        datotekaUcitavanje.ignore();
+        getline(datotekaUcitavanje,artikli[brojArtikla]);
+        datotekaUcitavanje>>cijena[brojArtikla];
+        brojArtikla++;
+    }
+    datotekaUcitavanje.close();
     while(1)
     {
         cout << "Glavni izbornik" << endl;
