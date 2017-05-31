@@ -51,6 +51,7 @@ int main()
         {
             cout <<"Unesite bar kod koji zelite pretraziti:";
             cin>> unos;
+            bool pronaden=false;
             for( int i = 0; i < brojArtikla; i++ )
             {
                 if(unos ==barkod[i])
@@ -58,8 +59,10 @@ int main()
                     cout << artikli[i] << "\t";
                     cout << "Cijena:"<<cijena[i]<<"\t";
                     cout <<"Bar kod:"<<barkod[i]<<endl;
+                    pronaden= true;
+                    break;
                 }
-                else
+                if(pronaden=false)
                 {
                     cout <<"Artikl nije pronaden.";
                 }
@@ -67,6 +70,26 @@ int main()
         }
         else if( izbor == 4 )
         {
+            cout <<"Unesite artikl koji zelite pronaci :";
+            string imeartikla;
+            cin.ignore();
+            getline(cin, imeartikla);
+            bool pronadjen=false;
+            for( int i = 0; i < brojArtikla; i++ )
+            {
+              if(imeartikla == artikli[i])
+              {
+                cout <<"Artikl: "<< artikli[i] << "\t";
+                cout << "Cijena: "<<cijena[i]<<"\t";
+                cout <<"Bar kod: "<<barkod[i]<<endl;
+                pronadjen = true;
+              }
+              if(pronadjen=false)
+              {
+                cout<<"Artikl nije pronadjen.";
+              }
+            }
+
         }
         else if( izbor == 5 )
         {
